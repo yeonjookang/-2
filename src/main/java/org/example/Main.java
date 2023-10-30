@@ -1,11 +1,8 @@
 package org.example;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         VendingMachine vendingMachine = new VendingMachine();
-        boolean restart;
-        do {
-            restart = vendingMachine.start();
-        } while (restart);
+        vendingMachine.start();
     }
 }
