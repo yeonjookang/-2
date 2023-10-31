@@ -1,6 +1,8 @@
 package org.example;
 
 public class VendingMachine {
+    PurchaseManager pm=new PurchaseManager();
+
     public void start() throws Exception {
         while(true){
             try{
@@ -16,6 +18,7 @@ public class VendingMachine {
     private void handle_main_menu(int mainMenuInput) {
         if(mainMenuInput==1){
             //음료 구매 메뉴
+            pm.start();
         } else if (mainMenuInput==2) {
             //유지 보수 메뉴
         } else if (mainMenuInput==3) {
