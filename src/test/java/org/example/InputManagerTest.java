@@ -11,7 +11,7 @@ class InputManagerTest {
         //given
         String input_str="1";
         //then
-        Assertions.assertEquals(1,InputManager.is_valid_main_menu_input(input_str));
+        assertDoesNotThrow(()-> InputManager.validMainMenuInput(input_str));
     }
 
     @Test
@@ -19,7 +19,7 @@ class InputManagerTest {
         //given
         String input_str="2";
         //then
-        Assertions.assertEquals(2,InputManager.is_valid_main_menu_input(input_str));
+        assertDoesNotThrow(()-> InputManager.validMainMenuInput(input_str));
     }
 
     @Test
@@ -27,7 +27,7 @@ class InputManagerTest {
         //given
         String input_str="3";
         //then
-        Assertions.assertEquals(3,InputManager.is_valid_main_menu_input(input_str));
+        assertDoesNotThrow(()-> InputManager.validMainMenuInput(input_str));
     }
 
     @Test
@@ -35,7 +35,7 @@ class InputManagerTest {
         //given
         String input_str="4";
         //then
-        Assertions.assertEquals(-1,InputManager.is_valid_main_menu_input(input_str));
+        assertThrows(IllegalArgumentException.class, () -> InputManager.validMainMenuInput(input_str));
     }
 
     @Test
@@ -43,7 +43,7 @@ class InputManagerTest {
         //given
         String input_str="a";
         //then
-        Assertions.assertEquals(-1,InputManager.is_valid_main_menu_input(input_str));
+        assertThrows(IllegalArgumentException.class, () -> InputManager.validMainMenuInput(input_str));
     }
 
     @Test
@@ -51,7 +51,7 @@ class InputManagerTest {
         //given
         String input_str="@";
         //then
-        Assertions.assertEquals(-1,InputManager.is_valid_main_menu_input(input_str));
+        assertThrows(IllegalArgumentException.class, () -> InputManager.validMainMenuInput(input_str));
     }
 
     @Test
@@ -59,7 +59,7 @@ class InputManagerTest {
         //given
         String input_str="";
         //then
-        Assertions.assertEquals(-1,InputManager.is_valid_main_menu_input(input_str));
+        assertThrows(IllegalArgumentException.class, () -> InputManager.validMainMenuInput(input_str));
     }
 
     @Test
@@ -67,6 +67,6 @@ class InputManagerTest {
         //given
         String input_str=" ";
         //then
-        Assertions.assertEquals(-1,InputManager.is_valid_main_menu_input(input_str));
+        assertThrows(IllegalArgumentException.class, () -> InputManager.validMainMenuInput(input_str));
     }
 }
